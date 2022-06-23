@@ -27,4 +27,6 @@ app.use('/', indexRouter)
 app.use('/restaurants', restaurantRouter)
 
 
-app.listen(process.env.PORT || 3502)
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
