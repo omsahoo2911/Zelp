@@ -1,3 +1,13 @@
-<% resNames.forEach(name => { %>
-    <div><%= name%></div>
+<% resList.forEach(res => { %>
+    <div>
+        <%= res.name%>
+        <br>
+        <img src=<%=res.image_url%>>
+        <br>
+        <%=res.rating%>
+        <br>
+        <%=res.price%>
+        <br>
+        <%=res.distance%>
+    </div>
 <% }) %> 

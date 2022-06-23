@@ -13,7 +13,7 @@ router.post('/', async (req, res)=>{
          const resList = await searchLocAndTerm(req, res, req.body.term, req.body.location)
          //res.render('restaurants/list')
          res.render('restaurants/list', {
-             resNames: resList
+             resList: resList
             })
         
     } catch {
@@ -48,9 +48,9 @@ async function searchLocAndTerm(req, res, term, loc){
         });
     });
     //console.log("RESPONSE: ", response);
-    //console.log("RESPONSE: ", response.businesses.map(bus=>bus.name));
+    console.log("RESPONSE: ", response.businesses[0]);
     //res.send(response.businesses.map(bus=>bus.name));
-    return response.businesses.map(bus=>bus.name);
+    return response.businesses;
 }
 
 module.exports = router
