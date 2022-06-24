@@ -1,0 +1,9 @@
+:root {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --main-color: hotpink;
+    --pane-padding: 5px 42px;
+  }
+
+  body{
+    background-color: aquamarine;
+  }
