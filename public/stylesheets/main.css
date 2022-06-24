@@ -1,9 +1,41 @@
 :root {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     --main-color: hotpink;
     --pane-padding: 5px 42px;
   }
 
-  body{
-    background-color: aquamarine;
+
+  .search-bars{
+    max-width: 344px;
+    text-align: center;
+    border: #7916ab 2px solid;
   }
+  .search-bar{
+    width: 300;
+    height: 30px;
+    border: 2px solid #8a2be2 ;
+    
+  }
+  
+
+  .btn:hover{
+    cursor: pointer;
+  }
+  .search-btn{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    background-color: #8a2be2;
+    color: aliceblue;
+    height: 50px;
+    width: 300px;
+    padding-block: 15px;
+  }
+  .search-btn:hover{
+    background-color:#7916ab ;
+  }
+  .title{
+    text-align: center;
+    color: #8a2be2;
+    
+  }
+  
