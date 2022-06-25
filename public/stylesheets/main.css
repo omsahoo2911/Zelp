@@ -4,16 +4,26 @@
     --pane-padding: 5px 42px;
   }
 
-
+ 
+  html,body{
+    margin: 0;
+    padding: 0;
+  }
   .search-bars{
+    
     max-width: 393px;
-    text-align: center;
     border: #7916ab 2px solid;
+
+    background-color: white;
+    margin: 50px 0px 50px 100px;
+    
+    
   }
   .search-bar{
     width: 300;
     height: 30px;
     border: none;
+    background-color: none;
     
   }
   
@@ -39,5 +49,10 @@
     text-align: center;
     color: #8a2be2;
     
+  }
+
+  header{
+    background-color: #cc34eb;
+    padding-bottom: 25px;
   }
   
