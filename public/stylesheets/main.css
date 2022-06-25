@@ -11,7 +11,7 @@
   }
   .search-bars{
     
-    max-width: 393px;
+    max-width: 400px;
     border: #7916ab 2px solid;
 
     background-color: white;
@@ -55,4 +55,11 @@
     background-color: #cc34eb;
     padding-bottom: 25px;
   }
-  
+  .rest-img{
+    width: 220px;
+    height: 220px;
+  }
+  .rest-list{
+    list-style:none;
+  }
+ 
