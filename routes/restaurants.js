@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const fetch = require("node-fetch")
-const resList = [];
+//this is dev
 //All Authors route
 router.get('/', async (req, res)=>{
     res.send('restaurant list')
