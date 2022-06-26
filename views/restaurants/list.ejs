@@ -1,20 +1,34 @@
 <div class="col-1">
     Rating:
     <input type="number" max="5" min="1" placeholder="min">
-    <input type="number" max="5" min="1" placeholder="max">
+    <span><input type="number" max="5" min="1" placeholder="max">
 
 </div>
 <% resList.forEach(res => { %>
     
-    <div class="col-5 offset-md-2">
+    <div class="col-5 offset-md-2 ">
         
     <ul class="list-group rest-list" >
     
-            <li class="list-group-item"><img src=<%=res.image_url%> class="rest-img">
-                <%= res.name%>
-                <%=res.rating%>
-                <%=res.price%>
-                <%=res.distance%>
+            <li class="list-group-item lst border-2 ">
+                <img src=<%=res.image_url%> class="rest-img">
+                <span class="rest-name rest-detail">
+                    <%= res.name%>
+                </span>
+                <br>
+                <span class="rest-rating rest-datail">
+                    Rating: &nbsp;<%=res.rating%>&#11088;
+                </span>
+                <br>
+                <span class="rest-price rest-detail">
+                    Price: &nbsp;<%=res.price%>
+                </span>
+                <br>
+                <span class="rest-distance rest-detail">
+                    Distance: &nbsp;<%=res.distance%>
+                </span>
+                
+                    
             <li>
     </ul>
     </div>
