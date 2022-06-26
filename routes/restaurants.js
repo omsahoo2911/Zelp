@@ -1,16 +1,22 @@
 const express = require('express')
 const router = express.Router()
 const fetch = require("node-fetch")
-//this is dev
-//All Authors route
+let resList = [];
+
 router.get('/', async (req, res)=>{
     res.send('restaurant list')
 })
 
 router.post('/', async (req, res)=>{
     console.log("restaurants post route called");
+    console.log(req.body.mainreq);
+    if(resList.length === 0){
+        resList = await searchLocAndTerm(req, res, req.body.term, req.body.location)
+    }
+    if(resList.length !== 0 && req.body.price !== undefined){
+        resList = resList.filter(rest => rest.hasOwnProperty('price') && rest.price.length === +req.body.price)
+    }
     try {
-         const resList = await searchLocAndTerm(req, res, req.body.term, req.body.location)
          //res.render('restaurants/list')
          res.render('restaurants/list', {
              resList: resList

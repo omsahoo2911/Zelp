@@ -1,7 +1,11 @@
 <div class="col-1">
-    Rating:
-    <input type="number" max="5" min="1" placeholder="min">
-    <span><input type="number" max="5" min="1" placeholder="max">
+    <div>
+        <form action="/restaurants" method="POST" class="search-bars">
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" class="search-bar">
+            <button type="submit" class="search-btn">&#x1F50E;&#xFE0E;</button>
+        </form>
+    </div>
 
 </div>
 <% resList.forEach(res => { %>
