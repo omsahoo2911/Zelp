@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const fetch = require("node-fetch")
 let resList = [];
+let filteredList = [];
 
 router.get('/', async (req, res)=>{
     res.send('restaurant list')
@@ -9,17 +10,23 @@ router.get('/', async (req, res)=>{
 
 router.post('/', async (req, res)=>{
     console.log("restaurants post route called");
-    console.log(req.body.mainreq);
-    if(resList.length === 0){
+    console.log(req.body.reqType);
+    if(req.body.reqType === "mainReq"){
         resList = await searchLocAndTerm(req, res, req.body.term, req.body.location)
+        filteredList = resList;
     }
-    if(resList.length !== 0 && req.body.price !== undefined){
-        resList = resList.filter(rest => rest.hasOwnProperty('price') && rest.price.length === +req.body.price)
+    if(resList.length !== 0 && req.body.price !== '' && req.body.reqType === "priceFilter"){
+        console.log("Entered price statement")
+        filteredList = filteredList.filter(rest => rest.hasOwnProperty('price') && rest.price.length === +req.body.price)
+    }
+    if(resList.length !== 0 && req.body.ratingLow !== '' && req.body.ratingHigh !== '' && req.body.reqType === "ratingFilter"){
+        console.log("Entered rating statement")
+        console.log(filteredList[0].rating)
+        filteredList = filteredList.filter(rest => rest.hasOwnProperty('rating') && rest.rating >= req.body.ratingLow && rest.rating <= req.body.ratingHigh)
     }
     try {
-         //res.render('restaurants/list')
          res.render('restaurants/list', {
-             resList: resList
+             resList: filteredList
             })
         
     } catch {
