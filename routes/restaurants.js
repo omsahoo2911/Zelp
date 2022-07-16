@@ -3,6 +3,7 @@ const router = express.Router()
 const fetch = require("node-fetch")
 let resList = [];
 let filteredList = [];
+let filtersApplied = false;
 
 router.get('/', async (req, res)=>{
     res.send('restaurant list')
@@ -16,13 +17,19 @@ router.post('/', async (req, res)=>{
         filteredList = resList;
     }
     if(resList.length !== 0 && req.body.price !== '' && req.body.reqType === "priceFilter"){
+        if(!filtersApplied){
+            filteredList = resList;
+        }
         console.log("Entered price statement")
         filteredList = filteredList.filter(rest => rest.hasOwnProperty('price') && rest.price.length === +req.body.price)
     }
-    if(resList.length !== 0 && req.body.ratingLow !== '' && req.body.ratingHigh !== '' && req.body.reqType === "ratingFilter"){
+    if(resList.length !== 0 && req.body.ratingLow !== '' && req.body.reqType === "ratingFilter"){
+        if(!filtersApplied){
+            filteredList = resList;
+        }
         console.log("Entered rating statement")
         console.log(filteredList[0].rating)
-        filteredList = filteredList.filter(rest => rest.hasOwnProperty('rating') && rest.rating >= req.body.ratingLow && rest.rating <= req.body.ratingHigh)
+        filteredList = filteredList.filter(rest => rest.hasOwnProperty('rating') && rest.rating >= req.body.ratingLow)
     }
     try {
          res.render('restaurants/list', {
