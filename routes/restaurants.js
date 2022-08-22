@@ -68,7 +68,7 @@ async function searchLocAndTerm(req, res, term, loc){
         });
     });
     //console.log("RESPONSE: ", response);
-    console.log("RESPONSE: ", response.businesses[0]);
+    //console.log("RESPONSE: ", response.businesses[0]);
     //res.send(response.businesses.map(bus=>bus.name));
     return response.businesses;
 }
