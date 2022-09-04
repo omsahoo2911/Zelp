@@ -8,12 +8,12 @@
   html,body{
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0!important;
+    background-color: #ffffff!important;
     
   }
   .search-bars{
     
-    max-width: 432.7px;
+    width: 30%;
     border: #7916ab 2px solid;
 
     background-color: white;
@@ -22,24 +22,32 @@
     
   }
   .search-bar{
-    width: 300;
-    height: 30px;
+    padding: 0px;
+    padding-right: 0%;
+    width: 42%;
+    height: auto;
     border: none;
     background-color: none;
+    border-radius: 5px;
     
   }
   
+  
+
+    
 
   .btn:hover{
     cursor: pointer;
+
   }
   .search-btn{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: auto;
+    min-width: 11.4036458%;
     font-size: large;
     background-color: #8a2be2;
     color: aliceblue;
     height: 41px;
-    width: 41px;
     border: none;
     
     
@@ -67,6 +75,7 @@
   }
   .rest-list li{
     display: inline-block;
+    box-shadow: 0 0 10px #dbd8ce;
     
   }
   .rest-distance{
@@ -84,5 +93,25 @@
   }
   .rest-name{
     font-weight: bold;
+  }
+  .checkbox:hover{
+    cursor: pointer;
+  }
+  .checkbox-label:hover{
+    cursor: pointer;
+  }
+  .checkbox{
+    margin-left: 10px;
+  }
+  .checkbox-title{
+    margin-left: 7px;
+    font-size: 25px;
+  }
+  .price{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .star{
+    font-size: 11px;
   }
  
